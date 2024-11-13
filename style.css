@@ -1,0 +1,1548 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Poppins, sans-serif;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    /* Adjust this value to match the height of your header */
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+/* Set the sections to have the same width and height */
+.Home,
+.Education,
+.Skills,
+.Projects,
+.Contact {
+    width: 100%;
+    /* Ensures full width */
+    min-height: 100vh;
+    /* Ensures full screen height */
+    display: flex;
+    justify-content: center;
+    /* Aligns content to the center horizontally */
+    align-items: center;
+    /* Aligns content to the center vertically */
+    flex-direction: column;
+    padding: 0px;
+    /* Add padding if needed */
+    background-color: #000;
+}
+
+
+.hero-header {
+    width: 100%;
+    min-height: 100vh;
+    background: #222;
+    padding: 0;
+}
+
+.wrapper {
+    width: 1280px;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styling */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Full width */
+    height: 100px;
+    /* Set height for the header */
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Light transparency */
+    backdrop-filter: blur(10px);
+    /* Apply blur effect to background content */
+    -webkit-backdrop-filter: blur(10px);
+    /* For Safari */
+    z-index: 1000;
+    /* Keep header above content */
+    transition: background-color 0.3s ease;
+    /* Smooth transition on scroll */
+}
+
+
+/* Adjust header height only for mobile screens */
+
+
+body {
+    padding-top: 0px;
+    /* Matches the header height */
+}
+
+/* Logo styling */
+.logo {
+    margin-left: 1px;
+    /* Add some space between the logo and the header edge */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo i {
+    font-size: 2.5rem;
+    /* Adjust the icon size */
+    color: whitesmoke;
+    /* Change the color to your preferred color */
+}
+
+
+.logo .logo-text {
+    font-size: 35px;
+    color: whitesmoke;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-weight: bold;
+    /* or just remove this line */
+}
+
+/* Icon bounce effect */
+.bounce {
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Text bounce effect */
+.bounce-text {
+    animation: text-bounce 2.2s infinite;
+}
+
+@keyframes text-bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+
+
+/* Navigation toggle button */
+nav .togglebtn {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 45px;
+    right: 3%;
+    z-index: 5;
+    cursor: pointer;
+    display: none;
+}
+
+nav .togglebtn span {
+    display: block;
+    background-color: blue;
+    margin: 5px 0;
+    width: 100%;
+    height: 3px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition-property: transform, opacity;
+}
+
+nav .navlinks {
+    list-style-type: none;
+}
+
+nav .navlinks li {
+    display: inline-block;
+}
+
+nav .navlinks li a {
+    position: relative;
+    /* Required for ::after positioning */
+    display: inline-block;
+    /* To make the underline align properly */
+    color: whitesmoke;
+    font-size: 1.1rem;
+    margin-right: 2.5rem;
+    font-weight: bold;
+    transition: color 0.25s;
+}
+
+nav .navlinks li a::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    /* Position it at the bottom of the text */
+    height: 3px;
+    /* Adjust thickness as needed */
+    width: 100%;
+    background: white;
+    transform: scaleY(0);
+    /* Initial scaleY set to 0 for the effect */
+    transform-origin: bottom;
+    /* Animation starts from the bottom */
+    transition: transform 1s;
+    border-radius: 100px;
+    /* Add units here */
+    z-index: -1;
+    /* Keeps the underline behind the text */
+}
+
+
+
+nav .navlinks li a:hover::after {
+    transform: scaleY(1);
+    /* Expands the underline on hover */
+}
+
+
+.hero-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Full viewport height */
+    background: #000;
+    padding: 0;
+}
+
+/* Container for hero section */
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 4rem;
+
+
+}
+
+.container .hero-pic {
+    width: 275px;
+    height: 275px;
+    clip-path: polygon(12.5% 0%, 87.5% 0%, 100% 12.5%, 100% 87.5%, 87.5% 100%, 12.5% 100%, 0% 87.5%, 0% 12.5%);
+    background-color: #000;
+    /* Interior color */
+    border: 5px solid #444;
+    /* Border color and thickness */
+    box-shadow: 1px 1px 50px rgba(0, 0, 0, 0.5);
+    /* Box shadow */
+}
+
+
+.hero-pic img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.hero-pic img:hover {
+    transform: scale(1.2);
+}
+
+.hero-text {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-text h5 {
+    color: #007ced;
+    font-size: 20px;
+
+}
+
+h5 {
+    display: flex;
+    align-items: center;
+}
+
+.static-text {
+    display: inline;
+    /* Ensures "Hi I'm" stays still */
+}
+
+.input {
+    display: inline;
+    /* Target the animated typing text */
+}
+
+
+.hero-text h5 span {
+    color: #007ced;
+    font-size: 18px;
+    /* Fixed invalid 'qpx' */
+}
+
+.hero-text h1 {
+    color: #007ced;
+    font-size: 3rem;
+
+}
+
+.hero-text p {
+    color: #fff;
+    font-weight: bold;
+    font-size: 21px;
+}
+
+
+.hero-text .social {
+    margin-top: 20px;
+}
+
+.hero-text .social i {
+    color: #e5e5e5;
+    font-size: 40px;
+    margin-right: 20px;
+    transition: 0.5s;
+}
+
+.hero-text .social i:hover {
+    color: #007ced;
+    transform: rotate(360deg);
+}
+
+
+/* Skill Progress */
+.skill-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+}
+
+.skill {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 80%;
+}
+
+.skill-label {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    font-weight: bold;
+    flex: 1;
+}
+
+.skill-icon {
+    width: 50px;
+    height: 15px;
+    margin-left: 0%;
+
+}
+
+.progress-bar {
+    position: relative;
+    width: 60%;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    position: absolute;
+    height: 100%;
+    width: 0;
+    background-color: #4a90e2;
+    /* Light blue for progress */
+    transition: width 3s ease;
+}
+
+.percentage {
+    font-weight: bold;
+    color: #4a90e2;
+    width: 100px;
+    text-align: right;
+}
+
+/* Shared background color for all sections */
+.shared-background {
+    background-color: #1a1a1a;
+    /* Dark gray background color */
+    color: #ffffff;
+    /* White text color */
+}
+
+/* Home Section */
+.home-section {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.home-section.hidden {
+    opacity: 0;
+}
+
+/* Education Section */
+.education-section {
+    opacity: 0;
+    transition: opacity 0.s ease;
+}
+
+/* Education Section */
+.education-section {
+    padding: 40px 20px;
+    /* Adjust padding as needed */
+
+    text-align: center;
+}
+
+#Education h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#Education p {
+    color: white;
+    font-size: 10px;
+    line-height: 1.6;
+    max-width: 800px;
+    /* Limit width for readability */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.education-wrapper {
+    margin-top: 30px;
+    /* Adds 20px of space above the .education-wrapper div */
+}
+
+
+
+
+
+
+
+
+
+/* Education section */
+/* Education section */
+.education-section {
+    width: 8%;
+    /* Adjust the width as needed */
+    min-height: 35vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center aligns the section content */
+    text-align: center;
+    /* Centers the text */
+    color: #fff;
+    /* White font for contrast */
+
+}
+
+.education-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    background-color: #000;
+    /* Ensure background is black */
+}
+
+
+
+
+.block {
+    animation: appear linear 1s;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    /* Corrected property */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #333;
+    /* Dark background for blocks */
+    color: #fff;
+    /* White font color */
+    flex: 1 1 30%;
+    /* Ensures three columns in desktop view */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.block img {
+    width: 80px;
+    height: auto;
+}
+
+.education-content {
+    flex-grow: 1;
+    color: #fff;
+    /* Ensure text inside content is white */
+}
+
+
+.block img {
+    width: 80px;
+    height: auto;
+}
+
+/* Ensures text inside content is white */
+.education-content {
+    flex-grow: 1;
+    color: #fff;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.block {
+    opacity: 0;
+    /* Start hidden */
+    transform: scale(0.5);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.block.visible {
+    animation: appear 0.5s ease;
+    /* Removed 'forwards' to allow re-triggering */
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+#skills {
+    background-color: black;
+    padding: 20px;
+    color: #ffffff;
+    margin-top: 30px;
+    text-align: center;
+    /* Center-aligns text within the section */
+
+}
+
+
+
+
+.section-title {
+    font-size: 8rem;
+    /* Adjust as needed */
+    margin: 0 auto;
+    /* Centers the element horizontally */
+}
+
+
+/* Skill Item Styling */
+.skill-item {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Semi-transparent background */
+    border-radius: 10px;
+    /* Rounded corners */
+    padding: 20px;
+    margin-bottom: 15px;
+    /* Space between items */
+    color: white;
+    /* White text color */
+    transition: background-color 0.3s ease;
+    /* Smooth transition for background on hover */
+}
+
+/* Skill Item Hover Effect */
+.skill-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Slightly lighter background on hover */
+}
+
+/* Skill Icon */
+.skill-icon {
+    width: 48px;
+    height: 48px;
+    margin-right: 20px;
+    font-size: 50px;
+}
+
+/* Skill Content (Title & Description) */
+.skill-content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Skill Title */
+.skill-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Skill Description */
+.skill-description {
+    font-size: 1rem;
+    color: #b3b3b3;
+    /* Light gray text */
+}
+
+/* Responsive Styles for Mobile View */
+
+
+
+.shared-background {
+    padding: 1rem;
+    background-color: black;
+    /* Set the background of the shared section to black */
+    border-radius: 10px;
+    /* Optional: rounds the corners of the section */
+    max-width: 1000px;
+    /* Limits the section's width */
+    width: 100%;
+    color: white;
+    /* Set the font color to white */
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: white;
+    /* Ensures title is white */
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: white;
+    /* Ensures paragraph text is white */
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+#Project.Project {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap;
+    /* Allows the items to wrap on smaller screens */
+}
+
+.project-box {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.project-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    transition: bottom 0.4s ease;
+}
+
+.overlay h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.overlay a {
+    color: #ff4d4d;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.overlay a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments for mobile view */
+
+
+
+/*contact section*/
+#contact {
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    /* Center the contact section */
+}
+
+#contact h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#contact p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.contact-image {
+    margin: 20px 0;
+}
+
+.contact-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #1c2541;
+    color: #ffffff;
+    font-size: 1em;
+    width: 100%;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #a5a5a5;
+}
+
+button {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #ffffff;
+    color: #0b132b;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #d9d9d9;
+}
+
+
+/* Contact Section Social Icons - Desktop View */
+.contact .social i {
+    color: #e5e5e5;
+    font-size: 40px;
+    margin-right: 20px;
+    transition: 0.5s;
+}
+
+.contact .social i:hover {
+    color: #007ced;
+    transform: rotate(360deg);
+}
+
+@media (max-width: 600px) {
+    header {
+        height: 80px;
+        /* Adjust height for mobile */
+        padding: 8px 15px;
+        /* Adjust padding as needed */
+    }
+
+    .hero-pic {
+        margin-bottom: 20px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+        /* Smaller font size for mobile */
+    }
+
+    .hero-text h1 {
+        font-size: 40px;
+    }
+
+
+
+    /* Adjust the breakpoint to match your desktop view */
+    .logo i {
+        height: 70px;
+        /* Increase height */
+        width: 70px;
+        /* Increase width */
+        font-size: 2.5rem;
+        /* Increase font size */
+        padding: 15px;
+        /* Adjust padding if needed */
+    }
+
+    .logo .logo-text {
+        font-size: 30px;
+        /* Increase text size */
+    }
+
+
+
+    /* Responsive design & displaying navbar for small screens */
+
+    nav .togglebtn {
+        display: initial;
+        top: 20px;
+        /* Adjust to align vertically */
+        right: 3%;
+    }
+
+    .click {
+        top: 50px;
+    }
+
+    .click span {
+        position: absolute;
+        margin-top: 12px;
+    }
+
+    .click span:first-child {
+        transform: rotate(-40deg);
+    }
+
+    .click span:nth-child(2) {
+        opacity: 0;
+        margin: 0;
+    }
+
+    .click span:last-child {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    nav .navlinks {
+        position: absolute;
+        top: 110px;
+        right: -100%;
+        bottom: 0;
+        width: 60%;
+        height: 100vh;
+        background-color: black;
+        z-index: 3;
+        box-shadow: 5px 13px 30px rgba(0, 0, 0, 0.1);
+        transition: 0.5s;
+        padding: 25px 0;
+    }
+
+    nav .navlinks li {
+        display: block;
+    }
+
+    nav .navlinks li a {
+        display: block;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    nav .navlinks.open {
+        right: 0;
+    }
+
+
+    /* Adjust for mobile view */
+
+    .container {
+        padding-top: 110px;
+        /* Padding for mobile to push below header */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Optional: Smaller hero picture for mobile view */
+    .container .hero-pic {
+        width: 200px;
+        /* Reduced size for smaller screens */
+        height: 200px;
+        border: 10px solid #444;
+        /* Adjust border width if needed */
+    }
+
+
+    .progress-bar {
+        width: 0%;
+        /* Increase width on smaller screens */
+    }
+
+    .percentage {
+        width: 0px;
+        /* Reduce width for percentage text */
+    }
+
+
+
+
+    /* Adjust margins and padding for the Education section */
+    #Education h2 {
+        margin-top: -150px !important;
+    }
+
+    #Education p {
+        margin-top: 0px;
+    }
+
+
+
+    .education-section {
+        margin-top: calc((100vh - [section-height]) / 2);
+        /* Replace [section-height] with the height of .education-section */
+    }
+
+    .education-wrapper {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+
+    /* Adjust font size for the section title */
+    .section-title {
+        font-size: 1.2em;
+        margin-top: 10px;
+        /* Optional: add more spacing if needed */
+    }
+
+
+
+    /* Adjust spacing for paragraph */
+    #Skills p {
+        margin-bottom: 250px;
+        /* Adjust to avoid overlapping with other elements */
+        font-size: 0.9em;
+        /* Smaller font size for better fit */
+    }
+
+    /* Add space between Educational section and Skills section */
+    #Educational {
+        margin-top: 40px !important;
+        margin-bottom: 30px;
+        /* Add space between the two sections */
+    }
+
+    .educ{
+        margin-top: 10px !important ;
+    }
+
+    .educ-info{
+        margin: 10px !important;
+        font-size: 15px !important;
+    }
+
+    .block{
+        margin: 10px !important;
+        text-align: center;
+    }
+
+    /* Align skill container in column layout and adjust spacing */
+    .skill-container {
+        flex-direction: column;
+        align-items: center;
+        /* Center align for better balance */
+        gap: 1px;
+        /* Add space between each skill block */
+    }
+
+    /* Ensure each skill block takes up full width */
+    .skill {
+        width: 90%;
+        /* Fit within mobile screen, leaving some padding */
+        text-align: center;
+        /* Center align content within each skill */
+        margin-bottom: 8px;
+        /* Space below each skill to prevent overlap */
+    }
+
+    /* Adjust skill labels and icon spacing */
+    .skill-label {
+        font-size: 15px;
+        /* Reduce font size slightly */
+        display: flex;
+        align-items: center;
+        gap: 1px;
+        /* Space between icon and text */
+
+    }
+
+    .skill-icon {
+        width: 20px;
+        /* Set a fixed width for all icons */
+        height: 2px;
+        /* Optional: Set a fixed height for consistency */
+        display: flex;
+        justify-content: center;
+        /* Centers icon horizontally */
+        align-items: center;
+        /* Centers icon vertically */
+        text-align: center;
+
+    }
+
+    /* Progress bar width and styling */
+    .progress-bar {
+        width: 100%;
+        height: 10px;
+        /* Slightly taller for mobile visibility */
+        margin-top: 5px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .progress {
+        height: 100%;
+        transition: width 2s ease;
+        /* Smooth animation */
+    }
+
+    /* Percentage label styling */
+    .percentage {
+        font-size: 1em;
+        color: #ccc;
+        margin-top: 3px;
+        margin-right: 15px;
+
+    }
+
+
+    .skill-item {
+        flex-direction: column;
+        /* Stack items vertically on mobile */
+        align-items: center;
+        padding: 15px;
+    }
+
+    .skill p {
+        font-size: 5px;
+    }
+
+    .skill-icon {
+        margin-bottom: 90px;
+        /* Space between icon and text on mobile */
+    }
+
+    .skill-title {
+        font-size: 1.25rem;
+        /* Slightly smaller title for mobile */
+    }
+
+    .skill-description {
+        font-size: 10rem;
+        /* Smaller description font on mobile */
+    }
+
+
+
+    #Project.Project {
+        flex-direction: column;
+        /* Stack project boxes vertically on mobile */
+        align-items: center;
+        /* Center align items */
+    }
+
+    .project-box {
+        width: 90%;
+        /* Take almost full width on mobile */
+        max-width: 300px;
+        /* Optional max width */
+        height: 350px;
+        /* Slightly reduce height for better mobile fit */
+    }
+
+    .overlay h2 {
+        font-size: 20px;
+        /* Adjust heading size for mobile */
+    }
+
+    .overlay p {
+        font-size: 14px;
+        /* Adjust paragraph font size for mobile */
+    }
+
+    .overlay a {
+        font-size: 14px;
+        /* Adjust link font size for mobile */
+
+    }
+
+
+    #contact h1 {
+        font-size: 1.5em;
+    }
+
+    #contact p {
+        font-size: 0.9em;
+    }
+
+    input,
+    textarea,
+    button {
+        font-size: 0.9em;
+        padding: 10px;
+
+    }
+
+
+
+    /* Responsive for Mobile Devices */
+
+    .contact .social {
+        display: flex;
+        justify-content: center;
+        /* Center align icons */
+        flex-wrap: wrap;
+        /* Wrap icons to avoid overflow */
+        margin-top: 10px;
+    }
+
+    .contact .social i {
+        font-size: 30px;
+        /* Slightly smaller icon size for mobile */
+        margin-right: 15px;
+        /* Adjust spacing */
+        margin-bottom: 10px;
+        /* Add some spacing for wrapping */
+    }
+}
+
+@media (max-width: 768px){
+    header {
+        height: 80px;
+        /* Adjust height for mobile */
+        padding: 8px 15px;
+        /* Adjust padding as needed */
+    }
+
+    .hero-pic {
+        margin-bottom: 20px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+        /* Smaller font size for mobile */
+    }
+
+    .hero-text h1 {
+        font-size: 40px;
+    }
+
+
+
+    /* Adjust the breakpoint to match your desktop view */
+    .logo i {
+        height: 70px;
+        /* Increase height */
+        width: 70px;
+        /* Increase width */
+        font-size: 2.5rem;
+        /* Increase font size */
+        padding: 15px;
+        /* Adjust padding if needed */
+    }
+
+    .logo .logo-text {
+        font-size: 30px;
+        /* Increase text size */
+    }
+
+
+
+    /* Responsive design & displaying navbar for small screens */
+
+    nav .togglebtn {
+        display: initial;
+        top: 20px;
+        /* Adjust to align vertically */
+        right: 3%;
+    }
+
+    .click {
+        top: 50px;
+    }
+
+    .click span {
+        position: absolute;
+        margin-top: 12px;
+    }
+
+    .click span:first-child {
+        transform: rotate(-40deg);
+    }
+
+    .click span:nth-child(2) {
+        opacity: 0;
+        margin: 0;
+    }
+
+    .click span:last-child {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    nav .navlinks {
+        position: absolute;
+        top: 110px;
+        right: -100%;
+        bottom: 0;
+        width: 60%;
+        height: 100vh;
+        background-color: black;
+        z-index: 3;
+        box-shadow: 5px 13px 30px rgba(0, 0, 0, 0.1);
+        transition: 0.5s;
+        padding: 25px 0;
+    }
+
+    nav .navlinks li {
+        display: block;
+    }
+
+    nav .navlinks li a {
+        display: block;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    nav .navlinks.open {
+        right: 0;
+    }
+
+
+    /* Adjust for mobile view */
+
+    .container {
+        padding-top: 110px;
+        /* Padding for mobile to push below header */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Optional: Smaller hero picture for mobile view */
+    .container .hero-pic {
+        width: 200px;
+        /* Reduced size for smaller screens */
+        height: 200px;
+        border: 10px solid #444;
+        /* Adjust border width if needed */
+    }
+
+
+    .progress-bar {
+        width: 0%;
+        /* Increase width on smaller screens */
+    }
+
+    .percentage {
+        width: 0px;
+        /* Reduce width for percentage text */
+    }
+
+
+
+
+    /* Adjust margins and padding for the Education section */
+    #Education h2 {
+        margin-top: -450px !important;
+    }
+
+    #Education p {
+        margin-top: 0px;
+    }
+
+
+
+    .education-section {
+        margin-top: calc((100vh - [section-height]) / 2);
+        /* Replace [section-height] with the height of .education-section */
+    }
+
+    .education-wrapper {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+
+    /* Adjust font size for the section title */
+    .section-title {
+        font-size: 1.2em;
+        margin-top: 100px;
+        /* Optional: add more spacing if needed */
+    }
+
+
+
+    /* Adjust spacing for paragraph */
+    #Skills p {
+        margin-bottom: 250px;
+        /* Adjust to avoid overlapping with other elements */
+        font-size: 0.9em;
+        /* Smaller font size for better fit */
+    }
+
+    /* Add space between Educational section and Skills section */
+    #Educational {
+        margin-top: 40px !important;
+        margin-bottom: 30px;
+        /* Add space between the two sections */
+    }
+
+    .educ{
+        margin-top: 10px !important ;
+    }
+
+    .educ-info{
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+        font-size: 15px !important;
+    }
+
+    .block{
+        margin: 10px !important;
+        text-align: center;
+    }
+
+    /* Align skill container in column layout and adjust spacing */
+    .skill-container {
+        flex-direction: column;
+        align-items: center;
+        /* Center align for better balance */
+        gap: 1px;
+        /* Add space between each skill block */
+
+        margin-top: 160px;
+    }
+
+    /* Ensure each skill block takes up full width */
+    .skill {
+        width: 90%;
+        /* Fit within mobile screen, leaving some padding */
+        text-align: center;
+        /* Center align content within each skill */
+        margin-bottom: 8px;
+        /* Space below each skill to prevent overlap */
+    }
+
+    /* Adjust skill labels and icon spacing */
+    .skill-label {
+        font-size: 15px;
+        /* Reduce font size slightly */
+        display: flex;
+        align-items: center;
+        gap: 1px;
+        /* Space between icon and text */
+
+    }
+
+    .skill-icon {
+        width: 20px;
+        /* Set a fixed width for all icons */
+        height: 2px;
+        /* Optional: Set a fixed height for consistency */
+        display: flex;
+        justify-content: center;
+        /* Centers icon horizontally */
+        align-items: center;
+        /* Centers icon vertically */
+        text-align: center;
+
+    }
+
+    /* Progress bar width and styling */
+    .progress-bar {
+        width: 100%;
+        height: 10px;
+        /* Slightly taller for mobile visibility */
+        margin-top: 5px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .progress {
+        height: 100%;
+        transition: width 2s ease;
+        /* Smooth animation */
+    }
+
+    /* Percentage label styling */
+    .percentage {
+        font-size: 1em;
+        color: #ccc;
+        margin-top: 3px;
+        margin-right: 15px;
+
+    }
+
+
+    .skill-item {
+        flex-direction: column;
+        /* Stack items vertically on mobile */
+        align-items: center;
+        padding: 15px;
+    }
+
+    .skill p {
+        font-size: 5px;
+    }
+
+    .skill-icon {
+        margin-bottom: 90px;
+        /* Space between icon and text on mobile */
+    }
+
+    .skill-title {
+        font-size: 30px !important;
+        /* Slightly smaller title for mobile */
+    }
+
+    .skill-description {
+        font-size: 20rem;
+        /* Smaller description font on mobile */
+    }
+
+
+
+    #Project.Project {
+        flex-direction: column;
+        /* Stack project boxes vertically on mobile */
+        align-items: center;
+        /* Center align items */
+    }
+
+    .project-box {
+        width: 90%;
+        /* Take almost full width on mobile */
+        max-width: 300px;
+        /* Optional max width */
+        height: 350px;
+        /* Slightly reduce height for better mobile fit */
+    }
+
+    .overlay h2 {
+        font-size: 20px;
+        /* Adjust heading size for mobile */
+    }
+
+    .overlay p {
+        font-size: 14px;
+        /* Adjust paragraph font size for mobile */
+    }
+
+    .overlay a {
+        font-size: 14px;
+        /* Adjust link font size for mobile */
+
+    }
+
+
+    #contact h1 {
+        font-size: 1.5em;
+    }
+
+    #contact p {
+        font-size: 0.9em;
+    }
+
+    input,
+    textarea,
+    button {
+        font-size: 0.9em;
+        padding: 10px;
+
+    }
+
+
+
+    /* Responsive for Mobile Devices */
+
+    .contact .social {
+        display: flex;
+        justify-content: center;
+        /* Center align icons */
+        flex-wrap: wrap;
+        /* Wrap icons to avoid overflow */
+        margin-top: 10px;
+    }
+
+    .contact .social i {
+        font-size: 30px;
+        /* Slightly smaller icon size for mobile */
+        margin-right: 15px;
+        /* Adjust spacing */
+        margin-bottom: 10px;
+        /* Add some spacing for wrapping */
+    }
+    
+}
+
+@media (max-width: 400px) {
+    #Education h2 {
+        margin-top: -200px !important;
+    }
+}

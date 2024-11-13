@@ -1452,7 +1452,9 @@ button:hover {
     }
 
     .skill-icon {
-        margin-bottom: 90px;
+        margin-bottom: 20px;
+        height: 50px;
+        width: 50px;    
         /* Space between icon and text on mobile */
     }
 
@@ -1463,6 +1465,7 @@ button:hover {
 
     .skill-description {
         font-size: 20rem;
+        margin-bottom: 20px !important;
         /* Smaller description font on mobile */
     }
 
